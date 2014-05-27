@@ -1,11 +1,12 @@
 ## Sensu to InfluxDB metrics
 
 #### This handler is to send metrics to an InfluxDB database with certain columns filled out.
-     To use this handler I created the directory structure to use when downloading and what locations to use for each file.
+#### To use this handler I created the directory structure to use when downloading and what locations to use for each file.
 
 
 ###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
-> #!/usr/bin/env ruby
+```
+#!/usr/bin/env ruby
 
 require 'rubygems'
 require 'sensu-handler'
@@ -49,12 +50,12 @@ class SensuToInfluxDB < Sensu::Handler
     end
   end
 end
-
+```
 
 
 ###### '/etc/sensu/conf.d/checks/check_cpu_metrics.json'
-
-> {
+```
+ {
   "checks": {
       "check_cpu_metrics": {
       "type": "metric",
@@ -65,11 +66,11 @@ end
       }
     }
 }
-
+```
 
 ###### '/etc/sensu/conf.d/influxdb-metrics.json'
-
->{
+```
+{
     "influxdb"   : {
                "server"      : "influxdb.familyguy.com",
                "port"        : "8086",
@@ -79,4 +80,4 @@ end
                "datapoint"   : "test"
      }
 }
-
+```
