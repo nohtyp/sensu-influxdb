@@ -4,6 +4,11 @@ This handler is to send metrics to an InfluxDB database with certain columns fil
 To use this handler I created the directory structure to use when downloading and what 
 locations to use for each file.
 
+Assumptions:
+---
+1. InfluxDB database has been created on the InfluxDB server
+2. Port is available for communication ("telnet/nc to port")
+
 
 ###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
 ```
