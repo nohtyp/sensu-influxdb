@@ -87,6 +87,7 @@ end
 
 ---
 Todo:
+---
 1. Add checking for network connectivity failure.
 2. Add check to create database and datapoint.
 3. Don't know what else to add to list, because still working on file will add new todo's when I get a chance.
