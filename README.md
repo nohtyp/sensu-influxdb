@@ -11,6 +11,7 @@ Assumptions:
 
 
 ###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
+```
 #!/usr/bin/env ruby
 
 require 'rubygems'
@@ -54,8 +55,6 @@ class SensuToInfluxDB < Sensu::Handler
     end
   end
 end
-```
-
 ```
 
 
