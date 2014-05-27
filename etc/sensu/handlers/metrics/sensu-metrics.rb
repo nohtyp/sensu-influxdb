@@ -23,6 +23,7 @@ class SensuToInfluxDB < Sensu::Handler
                                                     :server => influxdb_server
       
     mydata = []
+
     @event['check']['output'].each do |metric|
       m = metric.split
     next unless m.count == 3
