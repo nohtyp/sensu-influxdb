@@ -1,7 +1,8 @@
 ## Sensu to InfluxDB metrics
 
-#### This handler is to send metrics to an InfluxDB database with certain columns filled out.
-#### To use this handler I created the directory structure to use when downloading and what locations to use for each file.
+This handler is to send metrics to an InfluxDB database with certain columns filled out.
+To use this handler I created the directory structure to use when downloading and what 
+locations to use for each file.
 
 
 ###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
