@@ -39,7 +39,7 @@ class SensuToInfluxDB < Sensu::Handler
     mydata = []
     @event['check']['output'].each do |metric|
       m = metric.split
-    next unless m.count == 3
+      next unless m.count == 3
 
       key = m[0].split('.', 2)[1]
       #puts "Key: #{key}"
