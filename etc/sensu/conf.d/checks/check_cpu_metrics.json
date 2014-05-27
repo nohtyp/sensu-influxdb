@@ -1,0 +1,11 @@
+{
+  "checks": {
+      "check_cpu_metrics": {
+      "type": "metric",
+      "command": "/etc/sensu/plugins/system/cpu-metrics.rb",
+      "interval": 30,
+      "subscribers": [ "test" ],
+      "handlers": [ "influxdb" ]
+      }
+    }
+}
