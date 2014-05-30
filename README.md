@@ -100,8 +100,8 @@ end
 ```
 
 
-'Then restart sensu-server..and you should see a metric in the stats database as 'cpu_total_system'.
-To see the data run the following query on the stats database: select * from cpu_total_system'
+> Then restart sensu-server..and you should see a metric in the stats database as 'cpu_total_system'.
+To see the data run the following query on the stats database: select * from cpu_total_system
 
 ---
 Todo:
