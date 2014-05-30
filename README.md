@@ -81,12 +81,22 @@ end
                "port"        : "8086",
                "username"    : "root",
                "password"    : "root",
-               "database"    : "stats",
-               "datapoint"   : "test"
+               "database"    : "stats"
      }
 }
 ```
 
+###### '/etc/sensu/conf.d/handlers/influxdb-metrics.json'
+```
+{
+  "handlers": {
+       "influxdb": {
+           "type"        : "pipe",
+           "command"     : "/etc/sensu/handlers/metrics/influxdb-metrics.rb"
+     }
+  }
+}
+```
 
 
 ---
@@ -94,4 +104,5 @@ Todo:
 ---
 1. Add checking for network connectivity failure.
 2. Add check to create database and datapoint.
-3. Don't know what else to add to list, because still working on file will add new todo's when I get a chance.
+3. Figure out multiple passwords and databases
+4. Don't know what else to add to list, because still working on file will add new todo's when I get a chance.
