@@ -8,6 +8,7 @@ Assumptions:
 ---
 1. InfluxDB database has been created on the InfluxDB server
 2. Port is available for communication ("telnet/nc to port")
+3. The stats database is created on InfluxDB server
 
 
 ###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
@@ -98,6 +99,9 @@ end
 }
 ```
 
+
+'Then restart sensu-server..and you should see a metric in the stats database as 'cpu_total_system'.
+To see the data run the following query on the stats database: select * from cpu_total_system'
 
 ---
 Todo:
