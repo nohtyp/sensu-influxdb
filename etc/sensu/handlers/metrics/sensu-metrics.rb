@@ -33,8 +33,6 @@ class SensuToInfluxDB < Sensu::Handler
       key.gsub!('.', '_')
       value = m[1].to_f
       #puts "Value: #{value}"
-      mytime = Time.now
-
       mydata = {:host => @event['client']['name'], :value => "#{value}",
                 :ip => @event['client']['address']
                } 

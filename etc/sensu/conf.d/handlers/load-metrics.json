@@ -1,0 +1,8 @@
+{
+  "handlers": {
+       "loadmetrics": {
+           "type"        : "pipe",
+           "command"     : "/etc/sensu/handlers/metrics/influxdb-metrics.rb"
+     }
+  }
+}
