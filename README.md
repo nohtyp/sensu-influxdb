@@ -49,7 +49,7 @@ class SensuToInfluxDB < Sensu::Handler
       #puts "Value: #{value}"
       mytime = Time.now
 
-      mydata = {:host => @event['client']['name'], :value => "#{value}",
+      mydata = {:host => @event['client']['name'], :value => value,
                 :ip => @event['client']['address']
                } 
       influxdb_data.write_point(key, mydata)
