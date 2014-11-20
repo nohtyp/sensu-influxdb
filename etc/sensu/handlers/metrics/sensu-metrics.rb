@@ -29,10 +29,8 @@ class SensuToInfluxDB < Sensu::Handler
       next unless m.count == 3
 
       key = m[0].split('.', 2)[1]
-      #puts "Key: #{key}"
       key.gsub!('.', '_')
       value = m[1].to_f
-      #puts "Value: #{value}"
       mydata = {:host => @event['client']['name'], :value => value,
                 :ip => @event['client']['address']
                } 
