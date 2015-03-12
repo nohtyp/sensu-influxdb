@@ -24,7 +24,7 @@ class SensuToInfluxDB < Sensu::Handler
       
     mydata = []
 
-    @event['check']['output'].each do |metric|
+    @event['check']['output'].each_line do |metric|
       m = metric.split
       next unless m.count == 3
 
