@@ -11,8 +11,8 @@ Assumptions:
 3. The stats database is created on InfluxDB server
 
 
-###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
 ```
+###### '/etc/sensu/handlers/metrics/influxdb-metrics.rb'
 #!/usr/bin/env ruby
 
 require 'rubygems'
@@ -38,17 +38,14 @@ class SensuToInfluxDB < Sensu::Handler
                                                     :server => influxdb_server
       
     mydata = []
-    @event['check']['output'].each do |metric|
+
+    @event['check']['output'].each_line do |metric|
       m = metric.split
       next unless m.count == 3
 
       key = m[0].split('.', 2)[1]
-      #puts "Key: #{key}"
       key.gsub!('.', '_')
       value = m[1].to_f
-      #puts "Value: #{value}"
-      mytime = Time.now
-
       mydata = {:host => @event['client']['name'], :value => value,
                 :ip => @event['client']['address']
                } 
