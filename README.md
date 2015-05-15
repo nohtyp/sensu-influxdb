@@ -41,9 +41,8 @@ class SensuToInfluxDB < Sensu::Handler
 
     @event['check']['output'].each_line do |metric|
       m = metric.split
-      next unless m.count == 3
-
-      key = m[0].split('.', 2)[1]
+      next unless m.count >= 3
+      key = m[0].split('.', 1)[0]
       key.gsub!('.', '_')
       value = m[1].to_f
       mydata = {:host => @event['client']['name'], :value => value,
